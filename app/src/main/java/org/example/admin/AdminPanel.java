@@ -10,14 +10,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class AdminPanel {
-    private static final String ADMIN_PASSWORD = "admin";
+    private static final String ADMIN_PASSWORD = "";
     private Cinema cinema;
     private FilmDatabaseManager filmDatabaseManager;
     private DatabaseCleaner dbCleaner;
 
     public AdminPanel(Cinema cinema) {
         this.cinema = cinema;
-        this.filmDatabaseManager = new FilmDatabaseManager(); // Inicjalizacja FilmDatabaseManager
+        this.filmDatabaseManager = new FilmDatabaseManager();
         try {
             Connection connection = DriverManager.getConnection("jdbc:sqlite:kinobaza.db");
             this.dbCleaner = new DatabaseCleaner(connection);
@@ -48,11 +48,15 @@ public class AdminPanel {
     private void adminMenu() {
         JFrame adminFrame = new JFrame("Panel Admina");
         adminFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        adminFrame.setSize(600, 400); // Increase the size to fit more buttons
-        adminFrame.setLocationRelativeTo(null);
-        adminFrame.setLayout(new GridLayout(0, 1, 10, 10)); // Add some spacing between buttons
 
-        Font customFont = new Font("Arial", Font.BOLD, 20); // Consistent font
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenHeight = screenSize.height;
+
+        adminFrame.setSize(600, screenHeight);
+        adminFrame.setLocationRelativeTo(null);
+        adminFrame.setLayout(new GridLayout(0, 1, 10, 10));
+
+        Font customFont = new Font("Arial", Font.BOLD, 20);
 
         JButton btnWyswietlFilmy = new JButton("Wyświetl filmy");
         btnWyswietlFilmy.setFont(customFont);
@@ -87,9 +91,9 @@ public class AdminPanel {
         adminFrame.add(btnWyswietlSeanse);
         adminFrame.add(btnWyswietlUzytkownikow);
         adminFrame.add(btnUsunFilm);
+        adminFrame.add(btnUsunSeans);
         adminFrame.add(btnUsunUzytkownika);
         adminFrame.add(btnWyswietlDane);
-        adminFrame.add(btnUsunSeans);
         adminFrame.add(btnUsunDane);
         adminFrame.add(btnWyjscie);
 

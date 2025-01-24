@@ -1,17 +1,16 @@
 package org.example.screening;
 
 import org.example.film.Film;
-import java.util.List;
 
 public class Screening {
     private Film film;
     private String godzina;
-    private Hall hall;
+    private Hall sala;
 
-    public Screening(Film film, String godzina, Hall hall) {
+    public Screening(Film film, String godzina, Hall sala) {
         this.film = film;
         this.godzina = godzina;
-        this.hall = hall;
+        this.sala = sala;
     }
 
     public Film getFilm() {
@@ -23,6 +22,11 @@ public class Screening {
     }
 
     public Hall getSala() {
-        return hall;
+        return sala;
+    }
+
+    @Override
+    public String toString() {
+        return film.getTytul() + " o godz. " + godzina + " w sali " + sala.getNumer();
     }
 }

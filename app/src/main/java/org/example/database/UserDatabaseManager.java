@@ -1,9 +1,13 @@
 package org.example.database;
 
+import org.example.member.User;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import org.example.member.User;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDatabaseManager extends DatabaseManager {
 
@@ -24,5 +28,29 @@ public class UserDatabaseManager extends DatabaseManager {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<User> pobierzUzytkownikowZBazy() {
+        List<User> uzytkownicy = new ArrayList<>();
+        String sql = "SELECT * FROM użytkownicy";
+
+        try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                User user = new User(
+                        rs.getString("imię"),
+                        rs.getString("nazwisko"),
+                        rs.getString("email"),
+                        rs.getString("numer_telefonu")
+                );
+                uzytkownicy.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return uzytkownicy;
     }
 }
