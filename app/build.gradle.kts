@@ -46,7 +46,7 @@ tasks.test {
 
 tasks.jar {
     manifest {
-        attributes["Main-Class"] = "org.example.App" // Zmień na pełną ścieżkę do Twojej klasy głównej
+        attributes["Main-Class"] = "org.example.App"
     }
     from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
