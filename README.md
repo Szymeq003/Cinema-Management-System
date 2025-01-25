@@ -6,11 +6,12 @@ Projekt ten jest aplikacją desktopową do zarządzania seansami kinowymi, pozwa
 
 ## Funkcje
 
-- Dodawanie nowych seansów do bazy danych
+- Dodawanie nowych filmów, użytkowników i seansów do bazy danych
 - Edytowanie istniejących seansów
-- Usuwanie seansów
-- Zarządzanie biletami
-- Przeglądanie listy seansów
+- Usuwanie filmów, seansów i użytkowników
+- Zarządzanie biletami i związane z nim raportów
+- Przeglądanie listy filmów, seansów, użytkowników
+- Cała osobna sekcja Admin do zarządzania całym systemem
 
 ## Struktura Projektu
 
