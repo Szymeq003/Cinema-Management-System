@@ -65,7 +65,7 @@ Ten projekt jest licencjonowany na warunkach licencji MIT. Więcej informacji mo
 
 ![Zarządzanie Seansami](./screenshots/screening_management.png)
 ![Dodawanie Seansu](./screenshots/add_screening.png)
-![Lista Seansów](./screenshots/list_screenings.png)
+![Sprzedarz_Biletu](./screenshots/sell_ticket.png)
 
 ## Uwagi
 
