@@ -69,4 +69,4 @@ Ten projekt jest licencjonowany na warunkach licencji MIT. Więcej informacji mo
 
 ## Uwagi
 
-Jeśli masz jakiekolwiek pytania lub sugestie, prosimy o kontakt poprzez system issue na GitHubie lub bezpośrednio na [Twoj Email](szymon.pyrz03@gmail.com).
+Jeśli masz jakiekolwiek pytania lub sugestie, prosimy o kontakt poprzez system issue na GitHubie lub bezpośrednio na [szymon.pyrz03@gmail.com](szymon.pyrz03@gmail.com).
